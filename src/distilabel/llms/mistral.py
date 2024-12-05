@@ -146,11 +146,7 @@ class MistralLLM(AsyncLLM):
             )
 
         self._aclient = Mistral(
-            api_key=self.api_key.get_secret_value(),
-            endpoint=self.endpoint,
-            max_retries=self.max_retries,  # type: ignore
-            timeout=self.timeout,  # type: ignore
-            max_concurrent_requests=self.max_concurrent_requests,  # type: ignore
+            api_key=self.api_key.get_secret_value()
         )
 
         if self.structured_output:
