@@ -109,7 +109,7 @@ class SelfInstruct(Task):
         "Design queries to be self-contained and standalone.\n"
         "Blend interrogative (e.g., xの意味は何ですか?) and imperative (e.g., xのプロセスを詳しく説明してください。) styles.\n"
         # "Write each query on a separate line and avoid using numbered lists or bullet points.\n"
-        "Write each query separated by </br>.\n"
+        "Write each query separated by [end of query].\n"
         "Please be sure to write your queries in Japanese. Do not write in English."
     )
     application_description: str = "AI assistant"
@@ -173,4 +173,4 @@ class SelfInstruct(Task):
         if output is None:
             return {"instructions": []}
         print(output)
-        return {"instructions": [line for line in output.split("</br>") if line != ""]}
+        return {"instructions": [line for line in output.split("[end of query]") if line != ""]}
