@@ -105,10 +105,10 @@ class SelfInstruct(Task):
     num_instructions: int = 5
     criteria_for_query_generation: str = (
         "Incorporate a diverse range of verbs, avoiding repetition.\n"
-        "Ensure queries are compatible with AI model's text generation functions and are limited to 1-2 sentences.\n"
+        # "Ensure queries are compatible with AI model's text generation functions and are limited to 1-2 sentences.\n"
         "Design queries to be self-contained and standalone.\n"
         "Blend interrogative (e.g., xの意味は何ですか?) and imperative (e.g., xのプロセスを詳しく説明してください。) styles.\n"
-        "Write each query on a separate line and avoid using numbered lists or bullet points.\n"
+        # "Write each query on a separate line and avoid using numbered lists or bullet points.\n"
         "Please be sure to write your queries in Japanese. Do not write in English."
     )
     application_description: str = "AI assistant"
