@@ -172,4 +172,5 @@ class SelfInstruct(Task):
         """
         if output is None:
             return {"instructions": []}
+        print(output)
         return {"instructions": [line for line in output.split("</br>") if line != ""]}
